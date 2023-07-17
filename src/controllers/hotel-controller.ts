@@ -21,6 +21,7 @@ export async function hotelC (req: AuthenticatedRequest, res: Response, next: Ne
    }
  }
 
+ //status 402
 
  export async function quartoC (req: AuthenticatedRequest, res: Response, next: NextFunction) {
    try {
