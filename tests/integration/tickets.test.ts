@@ -8,6 +8,7 @@ import { cleanDb, generateValidToken } from '../helpers';
 import { prisma } from '@/config';
 import app, { init } from '@/app';
 
+//tk teste 010011
 beforeAll(async () => {
   await init();
 });

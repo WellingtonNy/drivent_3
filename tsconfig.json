@@ -12,6 +12,7 @@
     "paths": {
       "@/*": ["*"]
     },
+    
     "plugins": [
       {
         "transform": "typescript-transform-paths"

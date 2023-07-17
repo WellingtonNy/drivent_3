@@ -5,6 +5,13 @@ export type ApplicationError = {
   message: string;
 };
 
+export type ApplicationError2 = {
+  name: string;
+  message: string;
+  statusCode:number;
+};
+
+
 export type ViaCEPAddress = {
   logradouro: string;
   complemento: string;

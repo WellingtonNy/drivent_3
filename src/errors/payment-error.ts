@@ -1,5 +1,5 @@
-import { ApplicationError } from "@/protocols";
+import { ApplicationError2 } from "@/protocols";
 
-export function paymentErrors (message: string): ApplicationError {
-    return { name: 'PaymentErrors', message,}
+export function paymentErrors (message: string): ApplicationError2 {
+    return { name: 'PaymentErrors', message,statusCode:402}
   }
