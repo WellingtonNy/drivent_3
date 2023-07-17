@@ -13,6 +13,9 @@ export async function hotelC (req: AuthenticatedRequest, res: Response, next: Ne
      return res.status(httpStatus.OK).json(resultado)
    } 
    catch (error) {
+    if (error.name === 'PaymentErrors2') {
+      return res.sendStatus(httpStatus.PAYMENT_REQUIRED);
+    }
      next(error)
      console.log('error')
    }
@@ -27,6 +30,9 @@ export async function hotelC (req: AuthenticatedRequest, res: Response, next: Ne
      return res.status(httpStatus.OK).json(resultado);
    } 
    catch (error) {
+    if (error.name === 'PaymentErrors2') {
+      return res.sendStatus(httpStatus.PAYMENT_REQUIRED);
+    }
      next(error)
      console.log('error')
    }

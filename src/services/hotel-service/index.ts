@@ -19,8 +19,11 @@ export async function escolhaQuarto (userId: number, hotelId: number): Promise<H
    const buyTicketS = buyTicket.status;
    if (buyTicket.TicketType.isRemote) throw paymentErrors('Ticket não é para evento presencial');
    if (!buyTicket.TicketType.includesHotel) throw paymentErrors('Ticket não inclui hotel')
-   if (buyTicketS !== 'PAID') throw paymentErrors('Ticket aguardando Pagamento')
-    const clientRoom = await hotelObj.quarto(hotelId)
+   if (buyTicketS !== 'PAID'){
+      throw paymentErrors('Ticket aguardando Pagamento')
+   } 
+    
+   const clientRoom = await hotelObj.quarto(hotelId)
    if (!clientRoom) throw semHotel(hotelId)
    return clientRoom;
 
