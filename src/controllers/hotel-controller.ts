@@ -14,7 +14,7 @@ export async function hotelC (req: AuthenticatedRequest, res: Response, next: Ne
    } 
    catch (error) {
     if (error.name === 'PaymentErrors2') {
-      return res.sendStatus(httpStatus.PAYMENT_REQUIRED);
+      return res.status(httpStatus.PAYMENT_REQUIRED).send(error.message)
     }
      next(error)
      console.log('error')
@@ -31,7 +31,7 @@ export async function hotelC (req: AuthenticatedRequest, res: Response, next: Ne
    } 
    catch (error) {
     if (error.name === 'PaymentErrors2') {
-      return res.sendStatus(httpStatus.PAYMENT_REQUIRED);
+      return res.status(httpStatus.PAYMENT_REQUIRED).send(error.message)
     }
      next(error)
      console.log('error')
