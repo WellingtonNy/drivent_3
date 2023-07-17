@@ -1,5 +1,8 @@
 import { ApplicationError } from '@/protocols';
 
+
+
+//not found
 export function notFoundError(): ApplicationError {
   return {
     name: 'NotFoundError',
